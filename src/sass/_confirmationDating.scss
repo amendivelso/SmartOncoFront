@@ -1,0 +1,80 @@
+@import "_variables";
+
+.confirmationDating {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  .titleBtnNuevo {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 100px;
+    font-family: $titulos;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+
+    h1 {
+      display: flex;
+      font-size: 20px;
+    }
+  }
+
+  table {
+    font-family: $titulos;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    text-align: center;
+    padding: 8px;
+    font-family: $parrafos;
+    text-align: left;
+    border: solid 0.5px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .textColum2 {
+    text-align: left;
+  }
+
+  .iconTable1 {
+    color: $verde-menta;
+  }
+
+  .iconTable2 {
+    color: red;
+  }
+}
+
+.btnsCancellSave {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  width: 100%;
+  margin-left: -30px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+/* Large (lg) */
+@media (min-width: 1024px) {
+  .titleBtnNuevo {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+
+    font-family: $titulos;
+    align-items: center;
+  }
+}
+
+/* Medium (md) */
+@media (min-width: 768px) {
+}

@@ -1,0 +1,27 @@
+.navBtnContainer {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+
+  .navcontainer {
+    width: 50%;
+    gap: 10px;
+    display: flex;
+    font-family: $titulos;
+    text-decoration: none;
+    list-style-type: none;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $verde-menta;
+      background-color: #000;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+  }
+}

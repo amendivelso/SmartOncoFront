@@ -1,0 +1,25 @@
+@import "_variables";
+
+.containerLogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $azul-color;
+  align-items: center;
+
+  .logo {
+    width: 80%;
+  }
+
+  @media (min-width: 1024px) {
+    .logo {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .logo {
+      width: 80%;
+    }
+  }
+}

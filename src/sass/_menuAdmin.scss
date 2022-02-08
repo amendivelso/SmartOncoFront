@@ -1,0 +1,175 @@
+@import "_variables";
+
+//Contenedor de la pagina del administrador
+
+.adminPageContainer {
+  width: 90%;
+  height: 60vh;
+  font-family: $titulos;
+
+  // Contenedor del Menu Administrador
+
+  .containerMenuAdmin {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      font-family: $titulos;
+      font-size: 26px;
+    }
+
+    .iconMenu {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin: 30px;
+      cursor: pointer;
+    }
+
+    h5 {
+      margin-top: 8px;
+    }
+
+    /* Large (lg) */
+    @media (min-width: 1024px) {
+      width: 25%;
+      height: auto;
+      border: solid 1px $azul-color;
+      z-index: -1;
+    }
+
+    /* Medium (md) */
+    @media (min-width: 768px) {
+      width: 25%;
+      border: solid 1px $azul-color;
+      margin-top: -2px;
+      margin-bottom: -2px;
+      z-index: -1;
+
+      .adminPageContainer {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  ///////////// Contenedor de la Card movil
+
+  .containerCardAdmin {
+    width: 50%;
+    height: 100%;
+    margin-bottom: 40px;
+
+    .cardPaccientes {
+      width: 145%;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 40px;
+      margin-left: 40px;
+      padding: 0 20px;
+      border-radius: 15px;
+      border: solid 2px $verde-menta;
+      i {
+        font-size: 50px;
+        color: $verde-menta;
+      }
+      .numText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+    .cardCitas {
+      width: 145%;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 40px;
+      margin-left: 40px;
+      padding: 0 20px;
+      border-radius: 15px;
+      border: solid 2px $amarillo;
+
+      i {
+        font-size: 50px;
+        color: $amarillo;
+      }
+      .numText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+    .cardTotalCitas {
+      width: 145%;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 40px;
+      margin-left: 40px;
+      padding: 0 20px;
+      border-radius: 15px;
+      border: solid 2px $azul-color;
+      i {
+        font-size: 50px;
+        color: $azul-color;
+      }
+      .numText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+    /* Large (lg) */
+    @media (min-width: 1024px) {
+      width: 71%;
+      display: flex;
+    }
+
+    /* Medium (md) */
+    @media (min-width: 768px) {
+      width: 71%;
+      display: flex;
+    }
+  }
+
+  /////////////--resposive--//////////////
+
+  .adminMenuCardContainer {
+    @media (min-width: 1024px) {
+      width: 100%;
+      display: flex;
+    }
+
+    /* Medium (md) */
+    @media (min-width: 768px) {
+      width: 100%;
+      display: flex;
+    }
+  }
+}

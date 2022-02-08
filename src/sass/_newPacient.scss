@@ -1,0 +1,135 @@
+.containerNewPacient1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .containerNewUser2 {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin-left: 100px;
+    }
+
+    //inpust
+
+    .containerInputsVarious {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      flex-direction: column;
+      margin-left: 50px;
+
+      .containerInputsRows {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .containerInputs {
+          display: flex;
+          margin-top: 20px;
+          flex-direction: column;
+
+          i {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 60px;
+            margin-top: -20px;
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    input {
+      width: 200px;
+      border: solid 1px;
+      padding-left: 5px;
+      opacity: 0.5;
+    }
+
+    .inputEmail {
+      width: 200px;
+    }
+  }
+  //botones cerrar y continuar
+  .BtngobackBtnContinue {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    gap: 20px;
+  }
+
+  /* Large (lg) */
+  @media (min-width: 1024px) {
+    .containerNewUser2 {
+      width: 60%;
+
+      h1 {
+        margin-left: 248px;
+      }
+
+      //inpust
+
+      .containerInputsVarious {
+        .containerInputsRows {
+          flex-direction: row;
+          gap: 80px;
+          margin-left: -50px;
+          .containerInputs {
+            i {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .inputEmail {
+        width: 480px;
+      }
+    }
+
+    .BtnCloseBtnContinue {
+      justify-content: flex-end;
+      margin-right: 55px;
+      margin-top: 60px;
+      gap: 5px;
+    }
+  }
+
+  /* Medium (md) */
+  @media (min-width: 768px) {
+    .containerNewUser2 {
+      width: 60%;
+
+      //inpust
+
+      .containerInputsVarious {
+        .containerInputsRows {
+          flex-direction: row;
+          gap: 80px;
+          margin-left: -50px;
+          .containerInputs {
+            i {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .inputEmail {
+        width: 480px;
+      }
+    }
+
+    .BtnCloseBtnContinue {
+      justify-content: flex-end;
+      margin-right: 55px;
+      margin-top: 60px;
+      gap: 5px;
+    }
+  }
+}

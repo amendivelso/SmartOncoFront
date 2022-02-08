@@ -1,0 +1,36 @@
+.navcontainer {
+  width: 30%;
+  gap: 10px;
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: #2F455C;
+  /* Small (sm) */
+  /* Medium (md) */
+}
+
+.navcontainer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navcontainer a:hover {
+  color: #10FFCA;
+  background-color: #000;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+/*# sourceMappingURL=MenuLogin.css.map */

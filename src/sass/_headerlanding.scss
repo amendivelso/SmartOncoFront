@@ -1,0 +1,143 @@
+@import "_variables";
+
+.headerlanding {
+  width: 100%;
+  background-color: $azul-color;
+  font-family: $titulos;
+
+  .MenuLogoBtn {
+    background-color: $azul-color;
+    width: 100%;
+
+    //Nuevo boton
+    .cotainerBtn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      visibility: inherit;
+      margin-top: 30px;
+
+      .btnIngresar {
+        width: 100%;
+        gap: 30px;
+        font-size: 14px;
+        visibility: inherit;
+      }
+    }
+
+    .navBtnContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .navcontainer {
+        width: 100%;
+        gap: 10px;
+        display: flex;
+        font-family: $titulos;
+        text-decoration: none;
+        list-style-type: none;
+
+        a {
+          color: #fff;
+        }
+
+        a:hover {
+          color: $verde-menta;
+          text-decoration-line: underline;
+        }
+      }
+      //--------------------------
+      //esconde menu y botones
+      visibility: hidden;
+      //---------------------------
+    }
+
+    /* Large (lg) */
+    @media (min-width: 1024px) {
+      .navBtnContainer {
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 15px;
+        visibility: inherit;
+
+        .navcontainer {
+          visibility: inherit;
+          margin-left: 45px;
+
+          a {
+            visibility: inherit;
+          }
+
+          a:hover {
+            visibility: inherit;
+          }
+        }
+        .cotainerBtn {
+          //--------------------------
+          //visualisa el boton
+          margin-right: -41%;
+
+          visibility: inherit;
+
+          .btnIngresar {
+            font-size: 17px;
+            margin-top: 10px;
+          }
+          //---------------------------
+        }
+      }
+
+      .cotainerBtn {
+        //--------------------------
+        //esconde menu y botones
+        visibility: hidden;
+        //---------------------------
+      }
+    }
+
+    /* Medium (md) */
+    @media (min-width: 768px) {
+      .navBtnContainer {
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 15px;
+        visibility: inherit;
+
+        .navcontainer {
+          visibility: inherit;
+          margin-left: 45px;
+
+          a {
+            visibility: inherit;
+          }
+
+          a:hover {
+            visibility: inherit;
+          }
+        }
+        .cotainerBtn {
+          //--------------------------
+          //visualisa el boton
+          margin-right: -41%;
+
+          visibility: inherit;
+
+          .btnIngresar {
+            font-size: 17px;
+            margin-top: 10px;
+          }
+          //---------------------------
+        }
+      }
+
+      .cotainerBtn {
+        //--------------------------
+        //esconde menu y botones
+        visibility: hidden;
+        //---------------------------
+      }
+    }
+  }
+}

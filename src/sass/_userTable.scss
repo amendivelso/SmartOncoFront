@@ -1,0 +1,71 @@
+@import "_variables";
+
+.userTable {
+  max-width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  .titleBtnNuevo {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 100px;
+    font-family: $titulos;
+    align-items: center;
+    flex-direction: row;
+    font-size: 14px;
+
+    h1 {
+      font-size: 20px;
+      margin-top: -50px;
+    }
+  }
+
+  table {
+    font-family: $titulos;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    text-align: center;
+    padding: 8px;
+    font-family: $parrafos;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .nameTable {
+    display: flex;
+    text-align: left;
+    font-family: $parrafos;
+  }
+
+  .iconTable1 {
+    color: $verde-menta;
+  }
+
+  .iconTable2 {
+    color: red;
+  }
+
+  /* Large (lg) */
+  @media (min-width: 1024px) {
+    .titleBtnNuevo {
+      width: 100%;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-family: $titulos;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  /* Medium (md) */
+  @media (min-width: 768px) {
+  }
+}

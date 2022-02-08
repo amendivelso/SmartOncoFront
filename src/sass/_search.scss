@@ -1,0 +1,29 @@
+@import "_variables";
+
+.searchContainer {
+  display: flex;
+  height: 30px;
+  font-family: $titulos;
+
+  margin-left: 30px;
+  border: solid 1px;
+  margin-top: 45px;
+
+  i {
+    display: flex;
+    width: 31px;
+    height: 33px;
+    background-color: $azul-color;
+    border: solid 2px;
+    border-color: $verde-menta;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3px;
+    color: $verde-menta;
+    margin-right: -30px;
+  }
+
+  input {
+    padding-left: 10px;
+  }
+}
