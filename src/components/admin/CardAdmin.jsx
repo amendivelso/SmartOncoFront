@@ -9,14 +9,14 @@ const CardAdmin = () => {
             <div className='cardPaccientes'>
                 <i className="fas fa-user"></i>
                 <div className='numText'><Link to='#'>36</Link>
-                    <h4>Paciente</h4>
+                    <h4>Pacientes</h4>
                 </div>
             </div>
 
             <div className='cardCitas'>
                 <i className="fas fa-file-alt"></i>
                 <div className='numText'><Link to='#'>15</Link>
-                    <h4>Citas del dia</h4>
+                    <h4>Citas del día</h4>
                 </div>
             </div>
 

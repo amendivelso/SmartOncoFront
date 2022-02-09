@@ -6,20 +6,20 @@ const MenuAdmin = () => {
     return (
         <div className='containerMenuAdmin'>
             <section>
-                <h2>Menu</h2>
+                <h2>Menú</h2>
 
                 <div className='containerIconMenu'>
 
                     <div className='iconMenu'>
                         <i className="fas fa-user-tie"></i>
-                        <h5>Usuario</h5>
+                        <h5>Usuarios</h5>
                     </div>
 
 
 
                     <div className='iconMenu'>
                         <i className="fas fa-user"></i>
-                        <h5>Paciente</h5>
+                        <h5>Pacientes</h5>
                     </div>
 
                     <div className='iconMenu'>
@@ -29,12 +29,12 @@ const MenuAdmin = () => {
 
                     <div className='iconMenu'>
                         <i className="fas fa-address-card"></i>
-                        <h5>Citas Medicas</h5>
+                        <h5>Citas Médicas</h5>
                     </div>
 
                     <div className='iconMenu'>
                         <i className="fas fa-file-medical-alt"></i>
-                        <h5>Historial Paciente</h5>
+                        <h5>Historial Pacientes</h5>
                     </div>
                 </div>
             </section>
