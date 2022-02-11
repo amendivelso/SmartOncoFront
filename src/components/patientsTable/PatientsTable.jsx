@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import BtnNuevo from '../btn/BtnNuevo'
 import Footer from '../footer/Footer'
-import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../auth/authContext'
 
 import HeaderIconHome from '../header/HeaderIconHome'
 import Search from '../search/Search'
