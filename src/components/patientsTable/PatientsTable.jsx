@@ -24,8 +24,7 @@ const PatientsTable = () => {
   return (
     <div >
       <HeaderIconHome />
-     
-
+      
       <div className='userTable'>
 
         <div className='titleBtnNuevo'>
