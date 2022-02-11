@@ -46,8 +46,8 @@ const UserTable = () => {
             { !todos.users ? 'Cargando...' :
               todos.users.map((user, index) =>{
                 return <tr>
-                        <td>1</td>
-                        <td className='nameTable'>{user.name}</td>
+                        <td>{user.UserDocument}</td>
+                        <td className='nameTable'>{user.name +" "+ user.UserLastName}</td>
                         <td>{user.UserEmail}</td>
                         <td>{user.UserDocument}</td>
                         <td>{user.UserEntity}</td>

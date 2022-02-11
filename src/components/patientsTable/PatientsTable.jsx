@@ -1,85 +1,74 @@
-import React from 'react'
-import Footer from '../footer/Footer'
+import React, {useEffect, useState} from 'react'
 import BtnNuevo from '../btn/BtnNuevo'
+import Footer from '../footer/Footer'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../auth/authContext'
+
 import HeaderIconHome from '../header/HeaderIconHome'
 import Search from '../search/Search'
 
 const PatientsTable = () => {
-    return (
+    
+  const url = 'http://localhost:5000/api/patient'
+  const [todos, setTodos] = useState([])
+  const patients = async () => {
+    const response = await fetch(url)
+    const responseJson = await response.json()
+    console.log(responseJson);
+    setTodos(responseJson)
+  }
+  useEffect(() => {
+    patients()
+  }, []);
+  
+  return (
+    <div >
+      <HeaderIconHome />
+     
 
-        <>
-            <HeaderIconHome />
+      <div className='userTable'>
 
-            <div className='patientsTable'>
-
-                <div className='titleBtnNuevo'>
-                    <Search />
-                    <h2>Pacientes</h2>
-                    <BtnNuevo />
-                </div>
+        <div className='titleBtnNuevo'>
+          <Search />
+          <h1>Pacientes</h1>
+          <BtnNuevo />
+        </div>
 
                 <table>
                     <tbody>
                         <tr>
                             <th>ID</th>
                             <th>Nombre Completo</th>
-                            <th>Correo/Usuario</th>
+                            <th>Correo</th>
                             <th>Telefono</th>
-                            <th>Fecha</th>
+                            <th>regimenEPS</th>
                             <th>Estado</th>
-                            <th>Acciones</th>
-
-
+                            <th>Editar</th>
+                            <th>Eliminar</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td className='nameTable'>Carlos Peres Acosta</td>
-                            <td>carlos203@solsalud.com</td>
-                            <td>311756345</td>
-                            <td>05-27-2022</td>
-                            <td>Activo</td>
-                            <td className='iconSetting'><i class="fas fa-cog"></i>
-                                <i class="fas fa-caret-down"></i>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td className='nameTable'>Andrea Lopez</td>
-                            <td>Alopez@colsalud.com</td>
-                            <td>315786245</td>
-                            <td>05-27-2022</td>
-                            <td>Activo</td>
-                            <td className='iconSetting'><i class="fas fa-cog"></i>
-                                <i class="fas fa-caret-down"></i>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td className='nameTable'>Jhon Jairo Medina</td>
-                            <td>JMedina@rxdiagnostic.com</td>
-                            <td>300956548</td>
-                            <td>05-27-2022</td>
-                            <td>Activo</td>
-                            <td className='iconSetting'><i class="fas fa-cog"></i>
-                                <i class="fas fa-caret-down"></i>
-                            </td>
-
-
-                        </tr>
+                        {!todos.users ? 'Cargando...' :
+                            todos.users.map((patient, index) => {
+                                return <tr>
+                                    <td>{patient.patientDocument}</td>
+                                    <td className='nameTable'>{patient.firstName}</td>
+                                    <td>{patient.email1}</td>
+                                    <td>{patient.patientPhone1}</td>
+                                    <td>{patient.regimenEPS}</td>
+                                    <td>{patient.active}</td>
+                                    <td className='iconTable1'><i class="fas fa-edit"></i></td>
+                                    <td className='iconTable2'><i class="fas fa-trash-alt"></i></td>
+                                </tr>
+                            })
+                        }
 
                     </tbody>
                 </table>
             </div>
-
             <Footer />
-        </>
+        </div>
 
     )
 }
 
-export default PatientsTable
+export default PatientsTable;
 
