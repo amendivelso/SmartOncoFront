@@ -33,9 +33,9 @@ const NewUser = () => {
         Rol_idRol: ''
     })
     const { name, UserLastName, UserDocument, TypeDocument, Username, UserEntity, UserEmail, password, password_repeat, profesionalRegister, Rol_idRol } = formValues
-    
+
     const { dispatch } = useContext(AuthContext)
-    
+
     const [error, setError] = useState('')
 
     const navigate = useNavigate()
@@ -145,9 +145,6 @@ const NewUser = () => {
                         </div>
                     </div>
                 </div>
-
-
-
                 <div className='containerInputsRows'>
                     <div className='containerInputs'>
                         <label for="fname">Empresa</label>
