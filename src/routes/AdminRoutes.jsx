@@ -17,12 +17,12 @@ const AdminRoutes = () => {
       <Route exact path="/"
         element={<AdminPage />}>
       </Route>
-
+    
       <Route exact path="roles"
         element={<Rolespage />}>
       </Route>
 
-      <Route exact path="usuarios"
+      <Route exact path="/usuarios"
         element={<UserPage />}>
       </Route>
 

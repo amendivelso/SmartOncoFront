@@ -1,10 +1,20 @@
-import React, {useContext,  useState} from 'react';
+import React, { useContext, useState, } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth/authContext';
 import { useForm } from '../../hooks/useForm';
 import { types } from '../../types/types';
 import BtnClose from '../btn/BtnClose';
 import BtnContinue from '../btn/BtnContinue';
+import Select from 'react-select';
+
+
+const options = [
+    { value: 'Cédula Ciudadanía', label: 'Cédula Ciudadanía' },
+    { value: 'Cédula Extrangería', label: 'Cédula Extrangería' },
+    { value: 'Pasaporte', label: 'Pasaporte' }
+]
+
+
 
 
 
@@ -13,61 +23,73 @@ const NewUser = () => {
         name: '',
         UserLastName: '',
         UserDocument: '',
+        TypeDocument: '',
         Username: '',
         UserEntity: '',
         UserEmail: '',
         password: '',
-        password_repeat:'',
+        password_repeat: '',
         profesionalRegister: '',
-        Rol_idRol: +''
+        Rol_idRol: ''
     })
-    const { name, UserLastName, UserDocument, Username, UserEntity, UserEmail, password,password_repeat,profesionalRegister, Rol_idRol } = formValues
+    const { name, UserLastName, UserDocument, TypeDocument, Username, UserEntity, UserEmail, password, password_repeat, profesionalRegister, Rol_idRol } = formValues
+    
     const { dispatch } = useContext(AuthContext)
+    
     const [error, setError] = useState('')
+
     const navigate = useNavigate()
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(Username)
-    
-            const url = 'http://localhost:5000/api/user';
-            const UserActive=1
-            const userData = {
-                name, UserLastName, UserDocument, Username, UserEntity, UserEmail, password, password_repeat, profesionalRegister, UserActive, Rol_idRol
-            };
-            console.log (userData)
-    
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(userData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
 
-            const data = await response.json()
-            console.log(data)
-            if (data.message === 'Usuario registrado con exito...') {
-                const action = {
-                    type: types.login,
-                    payload: {
-                        Username,
-                        password
-                    }
-                }
-                setError('')
-                dispatch(action)
-    
-                const lastPath = localStorage.getItem('lastPath') || '/'
-    
-                navigate(lastPath, {
-                    replace: true
-                })
-            } else {
-                setError(data.message)
+        const url = 'http://localhost:5000/api/user';
+        const UserActive = 1
+        const userData = {
+            name, UserLastName, UserDocument, TypeDocument, Username, UserEntity, UserEmail, password, password_repeat, profesionalRegister, UserActive, Rol_idRol
+        };
+        console.log(userData)
+
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(userData),
+            headers: {
+                'Content-Type': 'application/json'
             }
-    
+        })
+
+
+        const data = await response.json()
+        console.log(data)
+        if (data.message === 'Usuario registrado con exito...') {
+            const action = {
+                type: types.login,
+                payload: {
+                    Username,
+                    password
+                }
+            }
+            setError('')
+            dispatch(action)
+
+            const lastPath = localStorage.getItem('lastPath') || '/'
+
+            navigate(lastPath, {
+                replace: true
+            })
+        } else {
+            setError(data.message)
+        }
+
     }
-   return <div className='containerNewUser1'>
+    const [value, setValue] = useState(options);
+
+    const onDRopdownChange = (option) => {
+        setValue(option.value);
+        console.log(option.value)
+    }
+    return <div className='containerNewUser1'>
         <form action="#" className='containerNewUser2' onSubmit={handleSubmit}>
 
             <div className='iconNewUser'>
@@ -98,7 +120,8 @@ const NewUser = () => {
                         </input>
                     </div>
                 </div>
-
+            </div>
+            <div className='containerInputsVarious'>
                 <div className='containerInputsRows'>
                     <div className='containerInputs'>
                         <label for="fname">Documento</label>
@@ -109,6 +132,32 @@ const NewUser = () => {
                             onChange={handleInputChange}></input>
                     </div>
 
+
+                    <div className='containerInputsRows'>
+                        <div className='containerInputs'>
+                            <div className='selec'>
+                                <label for="fname">Tipo Documento</label>
+                                <Select
+                                    options={value}
+                                    onChange={(option) => onDRopdownChange(option)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div className='containerInputsRows'>
+                    <div className='containerInputs'>
+                        <label for="fname">Empresa</label>
+                        <input type="text"
+                            name='UserEntity'
+                            value={UserEntity}
+                            autoComplete='off'
+                            onChange={handleInputChange}></input>
+
+                    </div>
                     <div className='containerInputs'>
                         <label for="fname">Usuario</label>
                         <input type="text"
@@ -120,38 +169,6 @@ const NewUser = () => {
                     </div>
                 </div>
 
-                <div className='containerInputsRows'>
-                    <div className='containerInputs'>
-                        <label for="fname">Empresa</label>
-                        <input type="text"
-                            name='UserEntity'
-                            value={UserEntity}
-                            autoComplete='off'
-                            onChange={handleInputChange}></input>
-                    </div>
-
-                    <div className='containerInputs'>
-                        <label for="fname">Grupo de  permisos</label>
-                        <input type="text" placeholder='Escoja una opción'
-                            name='Rol_idRol'
-                            value={Rol_idRol}
-                            autoComplete='off'
-                            onChange={handleInputChange}></input>
-                        <i class="fas fa-caret-down"></i>
-                    </div>
-                </div>
-
-                <div className='containerInputsRows'>
-                    <div className='containerInputs'>
-                        <label for="fname" >Correo</label>
-                        <input className='inputEmail' type="email"
-                            name='UserEmail'
-                            value={UserEmail}
-                            autoComplete='off'
-                            onChange={handleInputChange}
-                            ></input>
-                    </div>
-                </div>
 
                 <div className='containerInputsRows'>
                     <div className='containerInputs'>
@@ -175,6 +192,29 @@ const NewUser = () => {
                         ></input>
                     </div>
                 </div>
+                <div className='containerInputsRows'>
+                    <div className='containerInputs'>
+                        <label for="fname" >Correo</label>
+                        <input
+                            name='UserEmail'
+                            value={UserEmail}
+                            autoComplete='off'
+                            onChange={handleInputChange}
+                        ></input>
+
+                    </div>
+                    <div className='containerInputsRows'>
+                        <div className='containerInputs'>
+                            <label for="fname">Rol</label>
+                            <input
+                                name='Rol_idRol'
+                                value={Rol_idRol}
+                                autoComplete='off'
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -182,8 +222,8 @@ const NewUser = () => {
                 <BtnClose />
                 <BtnContinue />
             </div>
-        </form>
 
+        </form>
     </div>
 }
 

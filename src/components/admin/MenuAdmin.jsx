@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 
 const MenuAdmin = () => {
@@ -12,7 +12,7 @@ const MenuAdmin = () => {
                 <div className='containerIconMenu'>
                     <div className='iconMenu'>
                         <i className="fas fa-user-tie"></i>
-                        <h5>Usuarios</h5>
+                        <h5><Link to="/usuarios">Usuarios</Link></h5>
                        
                     </div>
 
