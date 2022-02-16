@@ -7,6 +7,6 @@ export const PublicRoute = ({children}) => {
   return (
     !user.logged 
     ? children
-    : <Navigate to='/' />
+    : <Navigate to='/admin' />
   )
 }

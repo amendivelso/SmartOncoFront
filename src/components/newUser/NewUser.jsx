@@ -5,17 +5,6 @@ import { useForm } from '../../hooks/useForm';
 import { types } from '../../types/types';
 import BtnClose from '../btn/BtnClose';
 import BtnContinue from '../btn/BtnContinue';
-import Select from 'react-select';
-
-
-const options = [
-    { value: 'Cédula Ciudadanía', label: 'Cédula Ciudadanía' },
-    { value: 'Cédula Extrangería', label: 'Cédula Extrangería' },
-    { value: 'Pasaporte', label: 'Pasaporte' }
-]
-
-
-
 
 
 const NewUser = () => {
@@ -82,13 +71,7 @@ const NewUser = () => {
             setError(data.message)
         }
 
-    }
-    const [value, setValue] = useState(options);
-
-    const onDRopdownChange = (option) => {
-        setValue(option.value);
-        console.log(option.value)
-    }
+    }    
     return <div className='containerNewUser1'>
         <form action="#" className='containerNewUser2' onSubmit={handleSubmit}>
 
@@ -136,11 +119,16 @@ const NewUser = () => {
                     <div className='containerInputsRows'>
                         <div className='containerInputs'>
                             <div className='selec'>
-                                <label for="fname">Tipo Documento</label>
-                                <Select
-                                    options={value}
-                                    onChange={(option) => onDRopdownChange(option)}
-                                />
+                            <label>Selecciona documento 
+                            <select 
+                            name='TypeDocument'
+                            value={TypeDocument} onChange= {handleInputChange }> 
+                            <option value=""></option> 
+                            <option value="CC">CC</option> 
+                            <option value="CE">CE</option> 
+                            <option value="PAS">PASAPORTE</option> 
+                            </select> 
+                            </label>
                             </div>
                         </div>
                     </div>
@@ -200,17 +188,23 @@ const NewUser = () => {
                         ></input>
 
                     </div>
-                    <div className='containerInputsRows'>
+                    
                         <div className='containerInputs'>
-                            <label for="fname">Rol</label>
-                            <input
-                                name='Rol_idRol'
-                                value={Rol_idRol}
-                                autoComplete='off'
-                                onChange={handleInputChange}
-                            ></input>
+                            <div className='selec'>
+                            <label>Selecciona Rol
+                            <select 
+                            name='Rol_idRol'
+                            value={Rol_idRol} onChange= {handleInputChange }> 
+                            <option value=""></option> 
+                            <option value="Administrador">Administrador</option> 
+                            <option value="Especialista">Especialista</option> 
+                            <option value="Proveedor">Proveedor</option> 
+                            <option value="Cliente">Cliente</option> 
+                            </select> 
+                            </label>
+                            </div>
                         </div>
-                    </div>
+                    
                 </div>
 
             </div>

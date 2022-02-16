@@ -11,12 +11,7 @@ const AdminPage = () => {
     return (
         <div className='adminPageContainer'>
             <HeaderAdmin />
-            <div className='adminMenuCardContainer'>
-
-                <MenuAdmin />
-                <CardAdmin />
-
-            </div>
+            <MenuAdmin />
             <Footer />
         </div>
     )

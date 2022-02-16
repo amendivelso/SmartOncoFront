@@ -65,7 +65,7 @@ const LoginBody = () => {
 
                 <h4>INICIAR SESIÓN</h4>
 
-                <div className='textlogin'><label htmlFor="">Correo</label></div>
+                <div className='textlogin'><label htmlFor="">Usuario</label></div>
                 <input
                     type="text"
                     placeholder='Usuario'

@@ -12,7 +12,6 @@ const HeaderIconHome = () => {
                     <p><Link to = '/'>Inicio</Link></p>
                 </div>
                 <Logo />
-                <h3>x</h3>
             </div>
 
         </div>

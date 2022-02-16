@@ -2,9 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandigPage from '../pages/LandinPage'
 import LoginPage from '../pages/LoginPage'
-import AdminRoutes from './AdminRoutes';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute'
+import AdminPage from '../pages/AdminPage';
+import UserPage from '../pages/UserPage';
+import PatientsPage from '../pages/PatientsPage';
+import NewUserPage from '../pages/NewUserPage';
 
 
 const AppRouter = () => {
@@ -14,9 +17,8 @@ const AppRouter = () => {
             <Router>
                 <Routes>
 
-
                     <Route
-                        path='/home'
+                        path='/'
                         element={
                             <PublicRoute>
                                 <LandigPage />
@@ -34,18 +36,41 @@ const AppRouter = () => {
                     />
 
                     <Route
-                        path='/*'
+                        path='/admin'
                         element={
                             <PrivateRoute>
-                                <AdminRoutes />
+                                <AdminPage/>
                             </PrivateRoute>
                         }
                     />
+                    <Route
+                        path="/usuarios"
+                        element={
+                            <PrivateRoute>
+                                <UserPage/>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/pacientes"
+                        element={
+                            <PrivateRoute>
+                                <PatientsPage/>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/nuevoUsuario"
+                        element={
+                            <NewUserPage>
+                                <PatientsPage/>
+                            </NewUserPage>
+                        }
+                    />
+                     
+
                 </Routes>
-
-
             </Router>
-
         </div>
     )
 }

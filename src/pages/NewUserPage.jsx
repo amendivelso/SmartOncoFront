@@ -1,11 +1,11 @@
 import React from 'react';
 import Footer from '../components/footer/Footer';
-import HeaderIconHome from '../components/header/HeaderIconHome';
+import HeaderAdmin from '../components/header/HeaderAdmin';
 import NewUser from '../components/newUser/NewUser';
 
 const NewUserPage = () => {
     return <div>
-        <HeaderIconHome />
+        <HeaderAdmin/>
         <NewUser />
         <Footer />
     </div>;

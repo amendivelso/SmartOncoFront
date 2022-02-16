@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import Logo from './Logo'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../auth/authContext'
 import { types } from '../../types/types'
+
 
 
 
@@ -13,7 +15,7 @@ const HeaderAdmin = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    console.log('holis')
+    
     const action = {
       type: types.logout
     }
@@ -25,11 +27,18 @@ const HeaderAdmin = () => {
   }
   return (
     <div className='containerHeaderAdmin'>
+            <div className='iconHomeContainer'>
+            <div className='containerHomeInicio'>
+                    <i class="fas fa-home"></i>
+                    <p><Link to = '/'>Inicio</Link></p>
+                </div>
+        </div>
       <Logo />
-      <button className='btn nav-item nav-link' onClick={handleLogout}>
-        Salir
-      </button>
-    </div>
+      <div className='cotainerBtn'>
+     <button className='btnIngresar' onClick={handleLogout}>Salir</button>
+   </div>
+   </div>
+     
   )
 }
 

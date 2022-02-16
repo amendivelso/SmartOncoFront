@@ -1,14 +1,14 @@
 @import "_variables";
 
 .containerLogo {
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   background-color: $azul-color;
   align-items: center;
 
   .logo {
-    width: 80%;
+    width: 70%;
   }
 
   @media (min-width: 1024px) {
